@@ -2,8 +2,8 @@ import time
 import threading
 from HX711 import *
 
-REFERENCE_UNIT = -24
-ZERO_VALUE = 123017
+REFERENCE_UNIT = -13
+ZERO_VALUE = 122092
 DATA_PIN = 23
 SCK_PIN = 24
 

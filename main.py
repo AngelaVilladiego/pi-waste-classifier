@@ -14,7 +14,7 @@ WASTE_CATEGORY_MAP = {
     'compost': 'compost',
     'glass': 'recycling',
     'metal': 'recycling',
-    'paper': 'recycling',
+    'paper': 'compost',
     'plastic': 'recycling',
     'trash': 'trash'
 }

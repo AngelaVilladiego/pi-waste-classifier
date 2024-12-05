@@ -56,6 +56,8 @@ def take_picture():
     
     print(f'Image saved at {image_path}.')
     
+    next_image_number = next_image_number + 1
+    
     return image_path
     
 def release_camera():
