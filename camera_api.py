@@ -42,11 +42,11 @@ def initialize_camera():
     print('Camera initialized')
 
 def take_picture():
-    global _cam
+    global _cam, next_image_number
     
-    if _cam is None:
-        print('Camera not initialized. Initializing...')
-        initialize_camera()
+    if not _cam.isOpened():
+        print('Error: couldn\'t load camera.')
+        exit()
         
     print('Taking photo...')
     

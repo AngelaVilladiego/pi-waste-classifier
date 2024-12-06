@@ -2,8 +2,8 @@ import time
 import threading
 from HX711 import *
 
-REFERENCE_UNIT = -13
-ZERO_VALUE = 121866
+REFERENCE_UNIT = -24
+ZERO_VALUE = 122930
 DATA_PIN = 23
 SCK_PIN = 24
 
@@ -46,7 +46,6 @@ def listen(scale_event_dispatcher):
                 mass_difference = new_mass.getValue() - last_mass.getValue()
                 
                 if stop_listening_flag.is_set():
-                    print("?????")
                     break
                 
                 if (not item_placed and mass_difference > 4):
@@ -60,7 +59,7 @@ def listen(scale_event_dispatcher):
                     hx.zero()
                 
                 # Item is placed and settled
-                elif item_placed and current_time - item_placed_time >= 2:
+                elif item_placed and current_time - item_placed_time >= 1:
                     event_dispatcher.dispatch('item_settled')
                 
                 last_mass = new_mass

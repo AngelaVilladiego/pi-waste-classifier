@@ -93,7 +93,9 @@ def on_item_settled():
     lights.on()
     
     # Take picture
+    camera.initialize_camera()
     image_path = camera.take_picture()
+    camera.release_camera()
     lights.off()
     
     # Predict image
@@ -141,7 +143,7 @@ def init():
     global event_dispatcher
     
     model.load_model(filepath="garbage_classification_model.pt", classes_file="classes.pkl")
-    camera.initialize_camera()
+    # camera.initialize_camera()
     scale.initialize_scale()
     event_dispatcher = ScaleEventDispatcher()
 
